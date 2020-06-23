@@ -1,12 +1,10 @@
 {
   "expo": {
-    "name": "news-app",
-    "slug": "news-app",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "name": "Blank Template",
+    "slug": "news-app-v2",
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,11 +16,12 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "extra": {
+      "newsApiKey": "a390ea8b92b74af98a397949bd730668"
     }
   }
 }
