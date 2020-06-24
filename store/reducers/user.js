@@ -1,12 +1,22 @@
-import { createStore, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+const initialState = {
+  clips: [],
+};
 
-import userReducer from './reducers/user';
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'ADD_CLIP':
+      return {
+        ...state,
+        clips: [...state.clips, action.clip],
+      };
+    case 'DELETE_CLIP':
+      return {
+        ...state,
+        clips: state.clips.filter((clip) => clip.url !== action.clip.url),
+      };
+    default:
+      return state;
+  }
+};
 
-const rootReducer = combineReducers({
-  user: userReducer,
-});
-
-const store = createStore(rootReducer, composeWithDevTools());
-
-export default store;
+export default reducer;
